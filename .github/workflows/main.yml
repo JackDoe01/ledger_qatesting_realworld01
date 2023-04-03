@@ -1,0 +1,39 @@
+name: QAtesting
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+    steps:
+      - name: check out repository
+        uses: actions/checkout@v3
+      - name: Build docker images
+        run: docker build . -t realworldtest01
+      - name: Run Backend Server
+        run: docker run -p 3000:3000 -td realworldtest01
+      - name: Setup Environment
+        run: |
+           chmod +x ./QAtesting/SetupEnv
+           ./QAtesting/SetupEnv
+        shell: bash
+      - name: Run Testing Pipeline
+        run: |
+           pytest --junitxml=./QAtesting/reports/pytest_report.xml -s ./QAtesting/TestOperator.py
+        shell: bash
+      - name: Upload logs artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: logs
+          path: QAtesting/logs
+          retention-days: 7
+      - name: Upload reports artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: reports
+          path: QAtesting/reports
+          retention-days: 7
