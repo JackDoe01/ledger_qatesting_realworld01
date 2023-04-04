@@ -3,7 +3,8 @@ Realworld Conduit backend in Node, deployed on Docker.
 Frontend testing with Selenium+Pytest
 Api testing with Python requests+Pytest
 
-# Note: you should have received the access to a throwout GitHub profile to use this repo as collaborator + access token to clone. If not please contact me.
+# Note: to run Workflow actions you need to be added as collaborator to this repo or in alternative, just fork the repo on your own account
+and you should be able to run Workflows actions.
 
 # Run the testing pipeline inside GitHub Workflows in a browser:
   - The Workflow is set to be ran manually, not on push, to run the workflow:
