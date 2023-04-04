@@ -16,8 +16,7 @@ class AddUser(GenerateUrl):
         super().__init__()
         self.url = self.users
         self.user_data = user_data
-        self.headers = {"Content-Type": "application/json", 
-                        "Content-Type": "application/json"
+        self.headers = {"Content-Type": "application/json"
                         }
         self.req_data = {"user": {"username": self.user_data["name"], 
                                   "email": self.user_data["email"], 
@@ -34,8 +33,7 @@ class AuthUser(GenerateUrl):
         super().__init__()
         self.url = self.login
         self.user_data = user_data
-        self.headers = {"Content-Type": "application/json", 
-                        "Content-Type": "application/json"
+        self.headers = {"Content-Type": "application/json",
                         }
         self.req_data = {"user": {
                                   "email": self.user_data["email"], 
