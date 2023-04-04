@@ -3,8 +3,7 @@ Realworld Conduit backend in Node, deployed on Docker.
 Frontend testing with Selenium+Pytest
 Api testing with Python requests+Pytest
 
-# Note: you should have received the access to a throwout GitHub profile to use this
-  repo as collaborator + access token to clone. If not please contact me.
+# Note: you should have received the access to a throwout GitHub profile to use this repo as collaborator + access token to clone. If not please contact me.
 
 # Run the testing pipeline inside GitHub Workflows in a browser:
   - The Workflow is set to be ran manually, not on push, to run the workflow:
@@ -75,7 +74,7 @@ Api testing with Python requests+Pytest
             
           - Comment the test n.1 into TestOperator.py to run multiple tests on a created user.
                   
-    ############################## PROJECT OVERVIEW ############################################
+# PROJECT OVERVIEW
     # By the Ledger tech assessment assignment, the project fully runs in a local env.
       The backend is containerized and data are saved in an instance of SQLite database, 
       running inside a docker image, with data persistency.
