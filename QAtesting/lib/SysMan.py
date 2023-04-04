@@ -81,7 +81,7 @@ def SysScreenLogger(message, level):
   # SysLogDebug("Some interesting thing happened, what a blast!")
   # SysLogWarning("This doesn't feel so right, are u sure we cool!?")
   # To enable, disable the screen printing, edit the variable:
-  #     config.sys_quite_log = True (keep it true, if not, it will be messy on screen, read the file afterwards)
+  #     config.sys_quite_log = [False/True]
   
 def SysLogDebug(message):
     SysScreenLogger(message, "SysLog[DEBUG]")
